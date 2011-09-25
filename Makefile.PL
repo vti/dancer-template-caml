@@ -14,8 +14,8 @@ license 'artistic_2';
 perl_version '5.008007';
 
 requires 'Carp'       => 0;
-requires 'Text::Caml' => 0;
-requires 'Dancer'     => 0;
+requires 'Text::Caml' => 0.009004;
+requires 'Dancer'     => 1.3072;
 
 tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t';
 
