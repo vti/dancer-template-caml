@@ -32,8 +32,10 @@ sub render {
           or Carp::croak("'$template' doesn't exist or not a regular file");
     }
 
-    my $prefix = quotemeta $_engine->templates_path;
-    $template =~ s{^$prefix}{};
+    unless ($template =~ m{^/}) {
+        my $prefix = quotemeta $_engine->templates_path;
+        $template =~ s{^$prefix}{};
+    }
 
     return $_engine->render_file($template, $tokens);
 }
