@@ -5,10 +5,11 @@ use warnings;
 
 require Carp;
 use Text::Caml;
+use Dancer::Config 'setting';
 
 use base 'Dancer::Template::Abstract';
 
-our $VERSION = '0.009001';
+our $VERSION = '0.00902';
 
 my $_engine;
 
@@ -17,9 +18,10 @@ sub default_tmpl_ext {"caml"}
 sub init {
     my $self = shift;
 
-    my %args = (%{$self->config},);
-
-    $_engine = Text::Caml->new(%args);
+    $_engine = Text::Caml->new(
+        templates_path => setting('views'),
+        %{$self->config}
+    );
 }
 
 sub render {
@@ -29,6 +31,9 @@ sub render {
         -f $template
           or Carp::croak("'$template' doesn't exist or not a regular file");
     }
+
+    my $prefix = quotemeta $_engine->templates_path;
+    $template =~ s{^$prefix}{};
 
     return $_engine->render_file($template, $tokens);
 }
