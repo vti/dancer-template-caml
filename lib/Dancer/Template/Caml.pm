@@ -9,7 +9,7 @@ use Dancer::Config 'setting';
 
 use base 'Dancer::Template::Abstract';
 
-our $VERSION = '0.00902';
+our $VERSION = '0.009002';
 
 my $_engine;
 
