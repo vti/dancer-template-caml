@@ -10,7 +10,7 @@ use Dancer::Config 'setting';
 
 use base 'Dancer::Template::Abstract';
 
-our $VERSION = '0.009002';
+our $VERSION = '0.10';
 
 my $_engine;
 
@@ -86,7 +86,7 @@ Viacheslav Tykhanovskyi, C<vti@cpan.org>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011, Viacheslav Tykhanovskyi
+Copyright (C) 2011-2012, Viacheslav Tykhanovskyi
 
 This program is free software, you can redistribute it and/or modify it under
 the terms of the Artistic License version 2.0.
