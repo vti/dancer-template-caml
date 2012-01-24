@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 require Carp;
+use File::Spec;
 use Text::Caml;
 use Dancer::Config 'setting';
 
@@ -32,7 +33,7 @@ sub render {
           or Carp::croak("'$template' doesn't exist or not a regular file");
     }
 
-    unless ($template =~ m{^/}) {
+    unless (File::Spec->file_name_is_absolute($template)) {
         my $prefix = quotemeta $_engine->templates_path;
         $template =~ s{^$prefix}{};
     }
