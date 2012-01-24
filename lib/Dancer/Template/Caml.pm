@@ -19,10 +19,8 @@ sub default_tmpl_ext {"caml"}
 sub init {
     my $self = shift;
 
-    $_engine = Text::Caml->new(
-        templates_path => setting('views'),
-        %{$self->config}
-    );
+    $_engine =
+      Text::Caml->new(templates_path => setting('views'), %{$self->config});
 }
 
 sub render {
@@ -34,8 +32,7 @@ sub render {
     }
 
     unless (File::Spec->file_name_is_absolute($template)) {
-        my $prefix = quotemeta $_engine->templates_path;
-        $template =~ s{^$prefix}{};
+        $template = File::Spec->abs2rel($template, $_engine->templates_path);
     }
 
     return $_engine->render_file($template, $tokens);
