@@ -1,5 +1,9 @@
 Revision history for perl module Dancer::Template::Caml
 
+0.11 2014-03-
+
+ - Added abstract (=head1 NAME) section to pod
+
 0.10 2012-01-25
 
  - Made path manipulations portable
