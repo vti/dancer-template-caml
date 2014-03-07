@@ -79,7 +79,7 @@ L<Dancer>, L<Text::Caml>
 
 =head2 Repository
 
-    http://github.com/vti/dancer-template-caml
+L<http://github.com/vti/dancer-template-caml>
 
 =head1 AUTHOR
 
