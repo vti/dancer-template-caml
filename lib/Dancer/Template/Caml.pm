@@ -40,6 +40,10 @@ sub render {
 
 1;
 
+=head1 NAME
+
+Dancer::Template::Caml - use Template::Caml for templating with Dancer
+
 =head1 DESCRIPTION
 
 This class is an interface between Dancer's template engine abstraction layer
@@ -75,7 +79,7 @@ L<Dancer>, L<Text::Caml>
 
 =head2 Repository
 
-    http://github.com/vti/dancer-template-caml
+L<http://github.com/vti/dancer-template-caml>
 
 =head1 AUTHOR
 
